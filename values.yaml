@@ -40,6 +40,7 @@ common:
 client:
   # It isn't common to need more than 2 client nodes.
   replicas: 2
+  nodeSelector: {}
   antiAffinity: "soft"
 
   # The amount of RAM allocated to the JVM heap. This should be set to the
@@ -67,6 +68,7 @@ client:
 data:
   # This count will depend on your data and computation needs.
   replicas: 2
+  nodeSelector: {}
   antiAffinity: "soft"
 
   # The amount of RAM allocated to the JVM heap. This should be set to the
@@ -99,6 +101,7 @@ data:
 master:
   # Master replica count should be (#clients / 2) + 1, and generally at least 3.
   replicas: 3
+  nodeSelector: {}
   antiAffinity: "soft"
   
   # The amount of RAM allocated to the JVM heap. This should be set to the
@@ -176,4 +179,4 @@ kibana:
       # - secretName: kibana-tls
       #   hosts:
       #     - kibana.local
-      
+

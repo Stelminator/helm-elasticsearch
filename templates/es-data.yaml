@@ -20,6 +20,8 @@ spec:
         component: {{ template "fullname" . }}
         role: data
     spec:
+      nodeSelector:
+{{ toYaml .Values.data.nodeSelector | indent 8 }}
       {{- if eq .Values.data.antiAffinity "hard" }}
       affinity:
         podAntiAffinity:
